@@ -22,6 +22,9 @@
 		06A895831985A5EF00FADAB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A895621985A5EF00FADAB0 /* UIKit.framework */; };
 		06A8958B1985A5EF00FADAB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06A895891985A5EF00FADAB0 /* InfoPlist.strings */; };
 		06A8958D1985A5EF00FADAB0 /* PhotomaniaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8958C1985A5EF00FADAB0 /* PhotomaniaTests.m */; };
+		06A895981985A73600FADAB0 /* Photomania.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06A895961985A73600FADAB0 /* Photomania.xcdatamodeld */; };
+		06A895A11985A85E00FADAB0 /* Photographer.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895A01985A85E00FADAB0 /* Photographer.m */; };
+		06A895A41985A85F00FADAB0 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895A31985A85F00FADAB0 /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,11 @@
 		06A895881985A5EF00FADAB0 /* PhotomaniaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotomaniaTests-Info.plist"; sourceTree = "<group>"; };
 		06A8958A1985A5EF00FADAB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		06A8958C1985A5EF00FADAB0 /* PhotomaniaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotomaniaTests.m; sourceTree = "<group>"; };
+		06A895971985A73600FADAB0 /* Photomania.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photomania.xcdatamodel; sourceTree = "<group>"; };
+		06A8959F1985A85E00FADAB0 /* Photographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photographer.h; sourceTree = "<group>"; };
+		06A895A01985A85E00FADAB0 /* Photographer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photographer.m; sourceTree = "<group>"; };
+		06A895A21985A85F00FADAB0 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		06A895A31985A85F00FADAB0 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +122,11 @@
 		06A895641985A5EF00FADAB0 /* Photomania */ = {
 			isa = PBXGroup;
 			children = (
+				06A895961985A73600FADAB0 /* Photomania.xcdatamodeld */,
+				06A895A21985A85F00FADAB0 /* Photo.h */,
+				06A895A31985A85F00FADAB0 /* Photo.m */,
+				06A8959F1985A85E00FADAB0 /* Photographer.h */,
+				06A895A01985A85E00FADAB0 /* Photographer.m */,
 				06A8956D1985A5EF00FADAB0 /* PhotomaniaAppDelegate.h */,
 				06A8956E1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m */,
 				06A895701985A5EF00FADAB0 /* Main_iPhone.storyboard */,
@@ -254,9 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A895A41985A85F00FADAB0 /* Photo.m in Sources */,
 				06A8956F1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m in Sources */,
 				06A8956B1985A5EF00FADAB0 /* main.m in Sources */,
 				06A895781985A5EF00FADAB0 /* PhotomaniaViewController.m in Sources */,
+				06A895A11985A85E00FADAB0 /* Photographer.m in Sources */,
+				06A895981985A73600FADAB0 /* Photomania.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +497,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		06A895961985A73600FADAB0 /* Photomania.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				06A895971985A73600FADAB0 /* Photomania.xcdatamodel */,
+			);
+			currentVersion = 06A895971985A73600FADAB0 /* Photomania.xcdatamodel */;
+			path = Photomania.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 06A895531985A5EF00FADAB0 /* Project object */;
 }
