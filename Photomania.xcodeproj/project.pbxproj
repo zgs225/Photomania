@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06A8955F1985A5EF00FADAB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A8955E1985A5EF00FADAB0 /* Foundation.framework */; };
+		06A895611985A5EF00FADAB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A895601985A5EF00FADAB0 /* CoreGraphics.framework */; };
+		06A895631985A5EF00FADAB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A895621985A5EF00FADAB0 /* UIKit.framework */; };
+		06A895691985A5EF00FADAB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06A895671985A5EF00FADAB0 /* InfoPlist.strings */; };
+		06A8956B1985A5EF00FADAB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8956A1985A5EF00FADAB0 /* main.m */; };
+		06A8956F1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8956E1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m */; };
+		06A895721985A5EF00FADAB0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A895701985A5EF00FADAB0 /* Main_iPhone.storyboard */; };
+		06A895751985A5EF00FADAB0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A895731985A5EF00FADAB0 /* Main_iPad.storyboard */; };
+		06A895781985A5EF00FADAB0 /* PhotomaniaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A895771985A5EF00FADAB0 /* PhotomaniaViewController.m */; };
+		06A8957A1985A5EF00FADAB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06A895791985A5EF00FADAB0 /* Images.xcassets */; };
+		06A895811985A5EF00FADAB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A895801985A5EF00FADAB0 /* XCTest.framework */; };
+		06A895821985A5EF00FADAB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A8955E1985A5EF00FADAB0 /* Foundation.framework */; };
+		06A895831985A5EF00FADAB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A895621985A5EF00FADAB0 /* UIKit.framework */; };
+		06A8958B1985A5EF00FADAB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06A895891985A5EF00FADAB0 /* InfoPlist.strings */; };
+		06A8958D1985A5EF00FADAB0 /* PhotomaniaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8958C1985A5EF00FADAB0 /* PhotomaniaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06A895841985A5EF00FADAB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06A895531985A5EF00FADAB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06A8955A1985A5EF00FADAB0;
+			remoteInfo = Photomania;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06A8955B1985A5EF00FADAB0 /* Photomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A8955E1985A5EF00FADAB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		06A895601985A5EF00FADAB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		06A895621985A5EF00FADAB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		06A895661985A5EF00FADAB0 /* Photomania-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Photomania-Info.plist"; sourceTree = "<group>"; };
+		06A895681985A5EF00FADAB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06A8956A1985A5EF00FADAB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06A8956C1985A5EF00FADAB0 /* Photomania-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photomania-Prefix.pch"; sourceTree = "<group>"; };
+		06A8956D1985A5EF00FADAB0 /* PhotomaniaAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotomaniaAppDelegate.h; sourceTree = "<group>"; };
+		06A8956E1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotomaniaAppDelegate.m; sourceTree = "<group>"; };
+		06A895711985A5EF00FADAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		06A895741985A5EF00FADAB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		06A895761985A5EF00FADAB0 /* PhotomaniaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotomaniaViewController.h; sourceTree = "<group>"; };
+		06A895771985A5EF00FADAB0 /* PhotomaniaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotomaniaViewController.m; sourceTree = "<group>"; };
+		06A895791985A5EF00FADAB0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06A8957F1985A5EF00FADAB0 /* PhotomaniaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotomaniaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06A895801985A5EF00FADAB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		06A895881985A5EF00FADAB0 /* PhotomaniaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PhotomaniaTests-Info.plist"; sourceTree = "<group>"; };
+		06A8958A1985A5EF00FADAB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06A8958C1985A5EF00FADAB0 /* PhotomaniaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotomaniaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06A895581985A5EF00FADAB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A895611985A5EF00FADAB0 /* CoreGraphics.framework in Frameworks */,
+				06A895631985A5EF00FADAB0 /* UIKit.framework in Frameworks */,
+				06A8955F1985A5EF00FADAB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A8957C1985A5EF00FADAB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A895811985A5EF00FADAB0 /* XCTest.framework in Frameworks */,
+				06A895831985A5EF00FADAB0 /* UIKit.framework in Frameworks */,
+				06A895821985A5EF00FADAB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06A895521985A5EF00FADAB0 = {
+			isa = PBXGroup;
+			children = (
+				06A895641985A5EF00FADAB0 /* Photomania */,
+				06A895861985A5EF00FADAB0 /* PhotomaniaTests */,
+				06A8955D1985A5EF00FADAB0 /* Frameworks */,
+				06A8955C1985A5EF00FADAB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06A8955C1985A5EF00FADAB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06A8955B1985A5EF00FADAB0 /* Photomania.app */,
+				06A8957F1985A5EF00FADAB0 /* PhotomaniaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06A8955D1985A5EF00FADAB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06A8955E1985A5EF00FADAB0 /* Foundation.framework */,
+				06A895601985A5EF00FADAB0 /* CoreGraphics.framework */,
+				06A895621985A5EF00FADAB0 /* UIKit.framework */,
+				06A895801985A5EF00FADAB0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06A895641985A5EF00FADAB0 /* Photomania */ = {
+			isa = PBXGroup;
+			children = (
+				06A8956D1985A5EF00FADAB0 /* PhotomaniaAppDelegate.h */,
+				06A8956E1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m */,
+				06A895701985A5EF00FADAB0 /* Main_iPhone.storyboard */,
+				06A895731985A5EF00FADAB0 /* Main_iPad.storyboard */,
+				06A895761985A5EF00FADAB0 /* PhotomaniaViewController.h */,
+				06A895771985A5EF00FADAB0 /* PhotomaniaViewController.m */,
+				06A895791985A5EF00FADAB0 /* Images.xcassets */,
+				06A895651985A5EF00FADAB0 /* Supporting Files */,
+			);
+			path = Photomania;
+			sourceTree = "<group>";
+		};
+		06A895651985A5EF00FADAB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06A895661985A5EF00FADAB0 /* Photomania-Info.plist */,
+				06A895671985A5EF00FADAB0 /* InfoPlist.strings */,
+				06A8956A1985A5EF00FADAB0 /* main.m */,
+				06A8956C1985A5EF00FADAB0 /* Photomania-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06A895861985A5EF00FADAB0 /* PhotomaniaTests */ = {
+			isa = PBXGroup;
+			children = (
+				06A8958C1985A5EF00FADAB0 /* PhotomaniaTests.m */,
+				06A895871985A5EF00FADAB0 /* Supporting Files */,
+			);
+			path = PhotomaniaTests;
+			sourceTree = "<group>";
+		};
+		06A895871985A5EF00FADAB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06A895881985A5EF00FADAB0 /* PhotomaniaTests-Info.plist */,
+				06A895891985A5EF00FADAB0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06A8955A1985A5EF00FADAB0 /* Photomania */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06A895901985A5EF00FADAB0 /* Build configuration list for PBXNativeTarget "Photomania" */;
+			buildPhases = (
+				06A895571985A5EF00FADAB0 /* Sources */,
+				06A895581985A5EF00FADAB0 /* Frameworks */,
+				06A895591985A5EF00FADAB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Photomania;
+			productName = Photomania;
+			productReference = 06A8955B1985A5EF00FADAB0 /* Photomania.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06A8957E1985A5EF00FADAB0 /* PhotomaniaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06A895931985A5EF00FADAB0 /* Build configuration list for PBXNativeTarget "PhotomaniaTests" */;
+			buildPhases = (
+				06A8957B1985A5EF00FADAB0 /* Sources */,
+				06A8957C1985A5EF00FADAB0 /* Frameworks */,
+				06A8957D1985A5EF00FADAB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06A895851985A5EF00FADAB0 /* PBXTargetDependency */,
+			);
+			name = PhotomaniaTests;
+			productName = PhotomaniaTests;
+			productReference = 06A8957F1985A5EF00FADAB0 /* PhotomaniaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06A895531985A5EF00FADAB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Photomania;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = XGTEAM;
+				TargetAttributes = {
+					06A8957E1985A5EF00FADAB0 = {
+						TestTargetID = 06A8955A1985A5EF00FADAB0;
+					};
+				};
+			};
+			buildConfigurationList = 06A895561985A5EF00FADAB0 /* Build configuration list for PBXProject "Photomania" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06A895521985A5EF00FADAB0;
+			productRefGroup = 06A8955C1985A5EF00FADAB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06A8955A1985A5EF00FADAB0 /* Photomania */,
+				06A8957E1985A5EF00FADAB0 /* PhotomaniaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06A895591985A5EF00FADAB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A895751985A5EF00FADAB0 /* Main_iPad.storyboard in Resources */,
+				06A8957A1985A5EF00FADAB0 /* Images.xcassets in Resources */,
+				06A895721985A5EF00FADAB0 /* Main_iPhone.storyboard in Resources */,
+				06A895691985A5EF00FADAB0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A8957D1985A5EF00FADAB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A8958B1985A5EF00FADAB0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06A895571985A5EF00FADAB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A8956F1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m in Sources */,
+				06A8956B1985A5EF00FADAB0 /* main.m in Sources */,
+				06A895781985A5EF00FADAB0 /* PhotomaniaViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06A8957B1985A5EF00FADAB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A8958D1985A5EF00FADAB0 /* PhotomaniaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06A895851985A5EF00FADAB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06A8955A1985A5EF00FADAB0 /* Photomania */;
+			targetProxy = 06A895841985A5EF00FADAB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06A895671985A5EF00FADAB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A895681985A5EF00FADAB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		06A895701985A5EF00FADAB0 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A895711985A5EF00FADAB0 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		06A895731985A5EF00FADAB0 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A895741985A5EF00FADAB0 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		06A895891985A5EF00FADAB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06A8958A1985A5EF00FADAB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06A8958E1985A5EF00FADAB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06A8958F1985A5EF00FADAB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06A895911985A5EF00FADAB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Photomania/Photomania-Prefix.pch";
+				INFOPLIST_FILE = "Photomania/Photomania-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		06A895921985A5EF00FADAB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Photomania/Photomania-Prefix.pch";
+				INFOPLIST_FILE = "Photomania/Photomania-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		06A895941985A5EF00FADAB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Photomania.app/Photomania";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Photomania/Photomania-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PhotomaniaTests/PhotomaniaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		06A895951985A5EF00FADAB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Photomania.app/Photomania";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Photomania/Photomania-Prefix.pch";
+				INFOPLIST_FILE = "PhotomaniaTests/PhotomaniaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06A895561985A5EF00FADAB0 /* Build configuration list for PBXProject "Photomania" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A8958E1985A5EF00FADAB0 /* Debug */,
+				06A8958F1985A5EF00FADAB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06A895901985A5EF00FADAB0 /* Build configuration list for PBXNativeTarget "Photomania" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A895911985A5EF00FADAB0 /* Debug */,
+				06A895921985A5EF00FADAB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		06A895931985A5EF00FADAB0 /* Build configuration list for PBXNativeTarget "PhotomaniaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06A895941985A5EF00FADAB0 /* Debug */,
+				06A895951985A5EF00FADAB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06A895531985A5EF00FADAB0 /* Project object */;
+}
