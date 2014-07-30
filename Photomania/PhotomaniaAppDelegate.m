@@ -88,7 +88,7 @@
       downloadTask:(NSURLSessionDownloadTask *)downloadTask
 didFinishDownloadingToURL:(NSURL *)location
 {
-    if ([downloadTask.description isEqualToString:FLICKR_FETCH]) {
+    if ([downloadTask.taskDescription isEqualToString:FLICKR_FETCH]) {
         [self loadFlickrPhotosFromLocalURL:location
                                intoContext:self.photoDatabaseContext
                        andThenExecuteBlock:^{

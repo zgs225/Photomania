@@ -142,26 +142,16 @@
 		06A895641985A5EF00FADAB0 /* Photomania */ = {
 			isa = PBXGroup;
 			children = (
+				06A895B81987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.m */,
+				06A895B71987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.h */,
 				06A895BB1987F8CF00FADAB0 /* PhotoDatabaseAvailabilityNotication.h */,
-				06A895B41986975F00FADAB0 /* PhotographersCDTVC.h */,
-				06A895B51986975F00FADAB0 /* PhotographersCDTVC.m */,
 				06A895961985A73600FADAB0 /* Photomania.xcdatamodeld */,
-				06A895A21985A85F00FADAB0 /* Photo.h */,
-				06A895A31985A85F00FADAB0 /* Photo.m */,
-				06A8959F1985A85E00FADAB0 /* Photographer.h */,
-				06A895A51985A99000FADAB0 /* Photo+Flickr.h */,
-				06A895A61985A99000FADAB0 /* Photo+Flickr.m */,
-				06A895AD19867CF500FADAB0 /* Photographer+Create.h */,
-				06A895AE19867CF500FADAB0 /* Photographer+Create.m */,
-				06A895A01985A85E00FADAB0 /* Photographer.m */,
 				06A8956D1985A5EF00FADAB0 /* PhotomaniaAppDelegate.h */,
 				06A8956E1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m */,
-				06A895701985A5EF00FADAB0 /* Main_iPhone.storyboard */,
-				06A895731985A5EF00FADAB0 /* Main_iPad.storyboard */,
-				06A895761985A5EF00FADAB0 /* PhotomaniaViewController.h */,
-				06A895771985A5EF00FADAB0 /* PhotomaniaViewController.m */,
+				06E2535919892FDB002A6980 /* Model */,
+				06E2535819892FA3002A6980 /* Controller */,
+				06E2535719892F8F002A6980 /* View */,
 				06A895791985A5EF00FADAB0 /* Images.xcassets */,
-				06A895B01986840C00FADAB0 /* CoreDataTableViewController */,
 				06A895A8198677E000FADAB0 /* Flickr Fetcher */,
 				06A895651985A5EF00FADAB0 /* Supporting Files */,
 			);
@@ -211,20 +201,46 @@
 		06A895B01986840C00FADAB0 /* CoreDataTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				06A895BA1987D16F00FADAB0 /* MOC */,
 				06A895B11986844700FADAB0 /* CoreDataTableViewController.h */,
 				06A895B21986844700FADAB0 /* CoreDataTableViewController.m */,
 			);
 			name = CoreDataTableViewController;
 			sourceTree = "<group>";
 		};
-		06A895BA1987D16F00FADAB0 /* MOC */ = {
+		06E2535719892F8F002A6980 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				06A895B81987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.m */,
-				06A895B71987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.h */,
+				06A895701985A5EF00FADAB0 /* Main_iPhone.storyboard */,
+				06A895731985A5EF00FADAB0 /* Main_iPad.storyboard */,
 			);
-			name = MOC;
+			name = View;
+			sourceTree = "<group>";
+		};
+		06E2535819892FA3002A6980 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06A895B01986840C00FADAB0 /* CoreDataTableViewController */,
+				06A895B41986975F00FADAB0 /* PhotographersCDTVC.h */,
+				06A895B51986975F00FADAB0 /* PhotographersCDTVC.m */,
+				06A895761985A5EF00FADAB0 /* PhotomaniaViewController.h */,
+				06A895771985A5EF00FADAB0 /* PhotomaniaViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		06E2535919892FDB002A6980 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				06A895A21985A85F00FADAB0 /* Photo.h */,
+				06A895A31985A85F00FADAB0 /* Photo.m */,
+				06A8959F1985A85E00FADAB0 /* Photographer.h */,
+				06A895A51985A99000FADAB0 /* Photo+Flickr.h */,
+				06A895A61985A99000FADAB0 /* Photo+Flickr.m */,
+				06A895AD19867CF500FADAB0 /* Photographer+Create.h */,
+				06A895AE19867CF500FADAB0 /* Photographer+Create.m */,
+				06A895A01985A85E00FADAB0 /* Photographer.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +568,7 @@
 				06A895921985A5EF00FADAB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06A895931985A5EF00FADAB0 /* Build configuration list for PBXNativeTarget "PhotomaniaTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +577,7 @@
 				06A895951985A5EF00FADAB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
