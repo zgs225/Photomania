@@ -7,40 +7,166 @@
 //
 
 #import "PhotomaniaAppDelegate.h"
+#import "PhotomaniaAppDelegate+MOC.h"
+#import "FlickrFetcher.h"
+#import <CoreData/CoreData.h>
+#import "Photo+Flickr.h"
+#import "PhotoDatabaseAvailabilityNotication.h"
+
+@interface PhotomaniaAppDelegate () <NSURLSessionDownloadDelegate>
+
+@property (copy, nonatomic) void (^flickrDownloadBackgroundURLSessionCompletitionHandler)();
+@property (strong, nonatomic) NSURLSession *flickrDownloadSession;
+@property (strong, nonatomic) NSTimer *flickrForegoundFetchTimer;
+@property (strong, nonatomic) NSManagedObjectContext *photoDatabaseContext;
+
+@end
+
+#define FLICKR_FETCH @"Flickr Just Uploaded Fetch"
+
+#define FOREGROUND_FLICKR_FETCH_INTERVAL (20*60)
+
+#define BACKGROUND_FLICKR_FETCH_INTERVAL (10)
 
 @implementation PhotomaniaAppDelegate
+
+#pragma mark - Application delegation
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.photoDatabaseContext = [self createMainQueueManagedObjectContext];
+    [self startFlickrFetch];
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application
+
+#pragma mark - Flickr fetching
+
+- (void)startFlickrFetch
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [self.flickrDownloadSession getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+        if (![downloadTasks count]) {
+            NSURLSessionDownloadTask *task = [self.flickrDownloadSession downloadTaskWithURL:[FlickrFetcher URLforRecentGeoreferencedPhotos]];
+            task.taskDescription = FLICKR_FETCH;
+            [task resume];
+        } else {
+            for (NSURLSessionDownloadTask *task in downloadTasks) {
+                [task resume];
+            }
+        }
+    }];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+#pragma mark - Properties
+
+- (NSURLSession *)flickrDownloadSession
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    if (!_flickrDownloadSession) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfiguration:FLICKR_FETCH];
+            _flickrDownloadSession = [NSURLSession sessionWithConfiguration:configuration
+                                                                   delegate:self
+                                                              delegateQueue:nil];
+        });
+    }
+    return _flickrDownloadSession;
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+- (void)setPhotoDatabaseContext:(NSManagedObjectContext *)photoDatabaseContext
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    _photoDatabaseContext = photoDatabaseContext;
+    NSDictionary *userInfo = self.photoDatabaseContext ? @{ PhotoDatabaseAvailabilityContext : self.photoDatabaseContext } : nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotication
+                                                        object:self
+                                                      userInfo:userInfo];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+#pragma mark - URLSessionDowloadDelegate
+
+- (void)URLSession:(NSURLSession *)session
+      downloadTask:(NSURLSessionDownloadTask *)downloadTask
+didFinishDownloadingToURL:(NSURL *)location
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    if ([downloadTask.description isEqualToString:FLICKR_FETCH]) {
+        [self loadFlickrPhotosFromLocalURL:location
+                               intoContext:self.photoDatabaseContext
+                       andThenExecuteBlock:^{
+                           [self flickrDownloadTasksMightBeComplete];
+                       }];
+    }
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
+- (void)URLSession:(NSURLSession *)session
+      downloadTask:(NSURLSessionDownloadTask *)downloadTask
+ didResumeAtOffset:(int64_t)fileOffset
+expectedTotalBytes:(int64_t)expectedTotalBytes
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // TODO
+}
+
+- (void)URLSession:(NSURLSession *)session
+      downloadTask:(NSURLSessionDownloadTask *)downloadTask
+      didWriteData:(int64_t)bytesWritten
+ totalBytesWritten:(int64_t)totalBytesWritten
+totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    // TODO
+}
+
+- (void)URLSession:(NSURLSession *)session
+              task:(NSURLSessionTask *)task
+didCompleteWithError:(NSError *)error
+{
+    if (error && (session = self.flickrDownloadSession)) {
+        NSLog(@"Flickr background download session failed: %@", error.localizedDescription);
+        [self flickrDownloadTasksMightBeComplete];
+    }
+}
+
+- (void)loadFlickrPhotosFromLocalURL:(NSURL *)localURL
+                         intoContext:(NSManagedObjectContext *)context
+                 andThenExecuteBlock:(void(^)())whenDone
+{
+    if (context) {
+        NSArray *photos = [self flickrPhotosAtURL:localURL];
+        [context performBlock:^{
+            [Photo loadPhotosFromFlickrArray:photos intoManagedObjectContext:context];
+            [context save:NULL];
+            if (whenDone) {
+                whenDone();
+            }
+        }];
+    } else {
+        if (whenDone) whenDone();
+    }
+}
+
+- (void)flickrDownloadTasksMightBeComplete
+{
+    if (self.flickrDownloadBackgroundURLSessionCompletitionHandler) {
+        [self.flickrDownloadSession getTasksWithCompletionHandler:^(NSArray *dataTasks, NSArray *uploadTasks, NSArray *downloadTasks) {
+            if (![downloadTasks count]) {
+                void(^completionHandler)() = self.flickrDownloadBackgroundURLSessionCompletitionHandler;
+                self.flickrDownloadBackgroundURLSessionCompletitionHandler = nil;
+                if (completionHandler) {
+                    completionHandler();
+                }
+            }
+        }];
+    }
+}
+
+- (NSArray *)flickrPhotosAtURL:(NSURL *)url
+{
+    NSDictionary *flickrPropertyList;
+    NSData *flickrJSONData = [NSData dataWithContentsOfURL:url];
+    if (flickrJSONData) {
+        flickrPropertyList = [NSJSONSerialization JSONObjectWithData:flickrJSONData
+                                                             options:0
+                                                               error:NULL];
+    }
+    return [flickrPropertyList valueForKeyPath:FLICKR_RESULTS_PHOTOS];
 }
 
 @end

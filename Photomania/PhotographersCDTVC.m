@@ -8,8 +8,19 @@
 
 #import "PhotographersCDTVC.h"
 #import "Photographer.h"
+#import "PhotoDatabaseAvailabilityNotication.h"
 
 @implementation PhotographersCDTVC
+
+- (void)awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserverForName:PhotoDatabaseAvailabilityNotication
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *note) {
+                                                      self.managedObjectContext = note.userInfo[PhotoDatabaseAvailabilityContext];
+                                                  }];
+}
 
 - (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
