@@ -291,6 +291,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = XGTEAM;
 				TargetAttributes = {
+					06A8955A1985A5EF00FADAB0 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					06A8957E1985A5EF00FADAB0 = {
 						TestTargetID = 06A8955A1985A5EF00FADAB0;
 					};

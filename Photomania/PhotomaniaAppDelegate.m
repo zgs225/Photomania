@@ -40,6 +40,39 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    if (self.photoDatabaseContext) {
+        // Start a new fetch task
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
+        configuration.allowsCellularAccess = NO;
+        configuration.timeoutIntervalForRequest = BACKGROUND_FLICKR_FETCH_INTERVAL;
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[FlickrFetcher URLforRecentGeoreferencedPhotos]];
+        NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request
+                completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+                    if (error) {
+                        NSLog(@"Flickr background fetch failed: %@", error.localizedDescription);
+                        completionHandler(UIBackgroundFetchResultNoData);
+                    } else {
+                        [self loadFlickrPhotosFromLocalURL:location intoContext:self.photoDatabaseContext andThenExecuteBlock:^{
+                            completionHandler(UIBackgroundFetchResultNewData);
+                        }];
+                    }
+        }];
+        [task resume];
+    } else {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
+}
+
+- (void)application:(UIApplication *)application
+handleEventsForBackgroundURLSession:(NSString *)identifier
+  completionHandler:(void (^)())completionHandler
+{
+    self.flickrDownloadBackgroundURLSessionCompletitionHandler = completionHandler;
+}
+
 #pragma mark - Flickr fetching
 
 - (void)startFlickrFetch
@@ -55,6 +88,11 @@
             }
         }
     }];
+}
+
+- (void)startFlickrFetch:(NSTimer *)timer
+{
+    [self startFlickrFetch];
 }
 
 #pragma mark - Properties
@@ -76,6 +114,14 @@
 - (void)setPhotoDatabaseContext:(NSManagedObjectContext *)photoDatabaseContext
 {
     _photoDatabaseContext = photoDatabaseContext;
+    
+    if (self.photoDatabaseContext) {
+        self.flickrForegoundFetchTimer = [NSTimer scheduledTimerWithTimeInterval:FOREGROUND_FLICKR_FETCH_INTERVAL
+                                                                          target:self
+                                                                        selector:@selector(startFlickrFetch:)
+                                                                        userInfo:nil repeats:YES];
+    }
+    
     NSDictionary *userInfo = self.photoDatabaseContext ? @{ PhotoDatabaseAvailabilityContext : self.photoDatabaseContext } : nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:PhotoDatabaseAvailabilityNotication
                                                         object:self
