@@ -10,6 +10,7 @@
 #import "Photographer.h"
 #import "PhotoDatabaseAvailabilityNotication.h"
 #import "PhotosByPhotographerCDTVC.h"
+#import "PhotosByPhotographerMapViewController.h"
 
 @implementation PhotographersCDTVC
 
@@ -58,6 +59,9 @@
     if ([vc isKindOfClass:[PhotosByPhotographerCDTVC class]]) {
         PhotosByPhotographerCDTVC *pbpcdtvc = (PhotosByPhotographerCDTVC *)vc;
         pbpcdtvc.photographer = photographer;
+    } else if ([vc isKindOfClass:[PhotosByPhotographerMapViewController class]]) {
+        PhotosByPhotographerMapViewController *pbpmvc = (PhotosByPhotographerMapViewController *)vc;
+        pbpmvc.photographer = photographer;
     }
 }
 
