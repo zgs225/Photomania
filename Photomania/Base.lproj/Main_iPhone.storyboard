@@ -7,7 +7,6 @@
         <!--Photos By PhotographerCDTVC - Photos-->
         <scene sceneID="ho3-JI-auU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aYa-1M-vY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="PhotosByPhotographerTableView" id="OvX-Yp-lPz" customClass="PhotosByPhotographerCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KK9-nf-zeg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -37,9 +36,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="fZq-EH-CrF" kind="push" id="jta-9E-I3G"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,13 +51,13 @@
                         </connections>
                     </refreshControl>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aYa-1M-vY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2478" y="-2659"/>
         </scene>
         <!--Photos By Photographer Map View Controller-->
         <scene sceneID="msl-8g-5ry">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N6z-Jf-pPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PhotosByPhotographerMapView" id="kNt-N3-bJx" customClass="PhotosByPhotographerMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VjC-4P-yaX"/>
@@ -87,15 +83,16 @@
                     <navigationItem key="navigationItem" id="V1J-bc-MO1"/>
                     <connections>
                         <outlet property="mapView" destination="qNu-r9-1kO" id="Z53-gn-kyM"/>
+                        <segue destination="fZq-EH-CrF" kind="push" identifier="Show Photo" id="EV6-Jw-N6v"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6z-Jf-pPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2478" y="-1945"/>
         </scene>
         <!--Navigation Controller - Photomania-->
         <scene sceneID="4yK-ty-Q5h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UOO-5B-ebi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="Photomania" automaticallyAdjustsScrollViewInsets="NO" id="hJC-FQ-GRe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bps-BN-Q7n">
@@ -107,13 +104,13 @@
                         <segue destination="sNU-Qa-usU" kind="relationship" relationship="rootViewController" id="Vvj-nR-y1v"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOO-5B-ebi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3420" y="-2659"/>
         </scene>
         <!--PhotographersCDTVC - Photographers-->
         <scene sceneID="Ost-OM-aL1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vOZ-XU-K9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="PhotographersTableView" title="Photographers" id="sNU-Qa-usU" customClass="PhotographersCDTVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WqU-he-84f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -155,6 +152,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Photomania" id="AVV-Q9-brp"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOZ-XU-K9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2958" y="-2659"/>
         </scene>
@@ -199,7 +197,6 @@
         <!--Image View Controller-->
         <scene sceneID="fL1-GN-w73">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3gz-3l-c8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ImageView" id="fZq-EH-CrF" customClass="ImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ef2-1U-dna"/>
@@ -243,6 +240,7 @@
                         <outlet property="spinner" destination="jhq-at-rdN" id="hVL-eC-IvV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gz-3l-c8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2000" y="-2659"/>
         </scene>
