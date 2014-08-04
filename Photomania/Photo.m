@@ -2,7 +2,7 @@
 //  Photo.m
 //  Photomania
 //
-//  Created by Yuez on 14-7-28.
+//  Created by Yuez on 14-8-4.
 //  Copyright (c) 2014年 XGTEAM. All rights reserved.
 //
 
@@ -12,10 +12,13 @@
 
 @implementation Photo
 
-@dynamic title;
-@dynamic subtitle;
 @dynamic imageURL;
+@dynamic subtitle;
+@dynamic title;
 @dynamic unique;
+@dynamic latitude;
+@dynamic longtitude;
+@dynamic thumbnailURL;
 @dynamic whoTook;
 
 @end
