@@ -8,7 +8,7 @@
 
 #import "PhotosByPhotographerMapViewController.h"
 #import <MapKit/MapKit.h>
-#import "Photo.h"
+#import "Photo+Annotation.h"
 #import "ImageViewController.h"
 
 @interface PhotosByPhotographerMapViewController () <MKMapViewDelegate>
@@ -52,6 +52,12 @@
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:self.photosByPhotographer];
     [self.mapView showAnnotations:self.photosByPhotographer animated:YES];
+    if (self.imageViewController) {
+        Photo *autoSelectedPhoto = [self.photosByPhotographer firstObject];
+        [self.mapView selectAnnotation:autoSelectedPhoto animated:YES];
+        [self prepareViewController:self.imageViewController forSegue:nil toShowAnnotation:autoSelectedPhoto];
+        
+    }
 }
 
 - (ImageViewController *)imageViewController
@@ -85,7 +91,13 @@
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    [self updateLeftCalloutAccessoryViewInAnnotationView:view];
+    if (self.imageViewController) {
+        [self prepareViewController:self.imageViewController
+                           forSegue:nil
+                   toShowAnnotation:view.annotation];
+    } else {
+        [self updateLeftCalloutAccessoryViewInAnnotationView:view];
+    }
 }
 
 - (void)updateLeftCalloutAccessoryViewInAnnotationView:(MKAnnotationView *)annotationView
@@ -131,13 +143,8 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    if (self.imageViewController) {
-        [self prepareViewController:self.imageViewController
-                           forSegue:nil
-                   toShowAnnotation:view.annotation];
-    } else {
+    if (!self.imageViewController)
         [self performSegueWithIdentifier:@"Show Photo" sender:view];
-    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
