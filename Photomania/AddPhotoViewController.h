@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photographer.h"
 
 @interface AddPhotoViewController : UIViewController
+
+// in
+@property (strong, nonatomic)Photographer *photographerTakingPhoto;
+
+// out
+@property (strong, readonly)Photo *addedPhoto;
 
 @end
