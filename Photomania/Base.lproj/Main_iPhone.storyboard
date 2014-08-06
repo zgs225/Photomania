@@ -115,7 +115,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tsF-Fy-5jo" kind="unwind" unwindAction="addedPhoto:" id="rBe-81-sFh"/>
+                                    <segue destination="tsF-Fy-5jo" kind="unwind" identifier="Do Add Photo" unwindAction="addedPhoto:" id="rBe-81-sFh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYO-Ts-6oU">

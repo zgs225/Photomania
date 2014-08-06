@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0621C7C91992DE25002AC27B /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0621C7C81992DE25002AC27B /* UIImage+Tool.m */; };
+		0621C7CC1992E3F2002AC27B /* IMG_0066.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0621C7CB1992E3F2002AC27B /* IMG_0066.jpg */; };
 		062926DB19925F7600CBF4DD /* AddPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 062926DA19925F7600CBF4DD /* AddPhotoViewController.m */; };
 		063ED502198A808000495A2D /* PhotosByPhotographerCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 063ED501198A808000495A2D /* PhotosByPhotographerCDTVC.m */; };
 		063ED505198A899F00495A2D /* PhotosCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 063ED504198A899F00495A2D /* PhotosCDTVC.m */; };
@@ -53,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0621C7C71992DE25002AC27B /* UIImage+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tool.h"; sourceTree = "<group>"; };
+		0621C7C81992DE25002AC27B /* UIImage+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tool.m"; sourceTree = "<group>"; };
+		0621C7CB1992E3F2002AC27B /* IMG_0066.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0066.jpg; sourceTree = "<group>"; };
 		062926D919925F7600CBF4DD /* AddPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
 		062926DA19925F7600CBF4DD /* AddPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
 		063ED500198A808000495A2D /* PhotosByPhotographerCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosByPhotographerCDTVC.h; sourceTree = "<group>"; };
@@ -136,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0621C7CA1992DE42002AC27B /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				0621C7C71992DE25002AC27B /* UIImage+Tool.h */,
+				0621C7C81992DE25002AC27B /* UIImage+Tool.m */,
+			);
+			name = UIImage;
+			sourceTree = "<group>";
+		};
 		06A895521985A5EF00FADAB0 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +184,7 @@
 		06A895641985A5EF00FADAB0 /* Photomania */ = {
 			isa = PBXGroup;
 			children = (
+				0621C7CB1992E3F2002AC27B /* IMG_0066.jpg */,
 				06A895B81987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.m */,
 				06A895B71987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.h */,
 				06A895BB1987F8CF00FADAB0 /* PhotoDatabaseAvailabilityNotication.h */,
@@ -177,6 +192,7 @@
 				06A8956D1985A5EF00FADAB0 /* PhotomaniaAppDelegate.h */,
 				06A8956E1985A5EF00FADAB0 /* PhotomaniaAppDelegate.m */,
 				06E2535919892FDB002A6980 /* Model */,
+				0621C7CA1992DE42002AC27B /* UIImage */,
 				06E2535819892FA3002A6980 /* Controller */,
 				06E2535719892F8F002A6980 /* View */,
 				06A895791985A5EF00FADAB0 /* Images.xcassets */,
@@ -364,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A895751985A5EF00FADAB0 /* Main_iPad.storyboard in Resources */,
+				0621C7CC1992E3F2002AC27B /* IMG_0066.jpg in Resources */,
 				06A8957A1985A5EF00FADAB0 /* Images.xcassets in Resources */,
 				06A895721985A5EF00FADAB0 /* Main_iPhone.storyboard in Resources */,
 				06A895691985A5EF00FADAB0 /* InfoPlist.strings in Resources */,
@@ -400,6 +417,7 @@
 				06A895B31986844700FADAB0 /* CoreDataTableViewController.m in Sources */,
 				06A8956B1985A5EF00FADAB0 /* main.m in Sources */,
 				069E747E198FC3E0006D7144 /* Photo+Annotation.m in Sources */,
+				0621C7C91992DE25002AC27B /* UIImage+Tool.m in Sources */,
 				06A895781985A5EF00FADAB0 /* PhotomaniaViewController.m in Sources */,
 				06A895A11985A85E00FADAB0 /* Photographer.m in Sources */,
 				06A895AC198677E000FADAB0 /* FlickrFetcher.m in Sources */,

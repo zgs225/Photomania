@@ -15,6 +15,6 @@
 @property (strong, nonatomic)Photographer *photographerTakingPhoto;
 
 // out
-@property (strong, readonly)Photo *addedPhoto;
+@property (strong, readonly, nonatomic)Photo *addedPhoto;
 
 @end
