@@ -34,4 +34,14 @@
     return photographer;
 }
 
++ (Photographer *)userInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    return [self photographerWithName:@"My Photos" inManagedObjectContext:context];
+}
+
+- (BOOL)isUser
+{
+    return self == [[self class] userInManagedObjectContext:self.managedObjectContext];
+}
+
 @end

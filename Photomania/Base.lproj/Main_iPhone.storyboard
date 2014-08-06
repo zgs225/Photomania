@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hJC-FQ-GRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="hJC-FQ-GRe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
-        <!--Photos By PhotographerCDTVC - Photos-->
+        <!--Photos-->
         <scene sceneID="ho3-JI-auU">
             <objects>
                 <tableViewController storyboardIdentifier="PhotosByPhotographerTableView" id="OvX-Yp-lPz" customClass="PhotosByPhotographerCDTVC" sceneMemberID="viewController">
@@ -69,7 +70,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qNu-r9-1kO">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -80,8 +80,15 @@
                             <constraint firstItem="qNu-r9-1kO" firstAttribute="top" secondItem="xkR-J4-NWg" secondAttribute="top" id="fca-Yg-VII"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="V1J-bc-MO1"/>
+                    <navigationItem key="navigationItem" id="V1J-bc-MO1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="uld-r9-Trf">
+                            <connections>
+                                <segue destination="CIA-NP-0Yx" kind="modal" identifier="Add photo" id="Ps3-gW-min"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addPhotoBarButtonItem" destination="uld-r9-Trf" id="Mav-B0-14K"/>
                         <outlet property="mapView" destination="qNu-r9-1kO" id="Z53-gn-kyM"/>
                         <segue destination="fZq-EH-CrF" kind="push" identifier="Show Photo" id="EV6-Jw-N6v"/>
                     </connections>
@@ -90,7 +97,60 @@
             </objects>
             <point key="canvasLocation" x="-2478" y="-1945"/>
         </scene>
-        <!--Navigation Controller - Photomania-->
+        <!--Add Photo View Controller-->
+        <scene sceneID="327-qq-Uyz">
+            <objects>
+                <viewController id="CIA-NP-0Yx" customClass="AddPhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zrh-Nn-GiI"/>
+                        <viewControllerLayoutGuide type="bottom" id="k9H-Mi-IYg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DY9-ca-bSV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-jr-PvG">
+                                <rect key="frame" x="267" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYO-Ts-6oU">
+                                <rect key="frame" x="16" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3R8-LB-nf2">
+                                <rect key="frame" x="16" y="66" width="288" height="288"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQd-Wn-j7s">
+                                <rect key="frame" x="16" y="375" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subtitle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xaq-7X-qJX">
+                                <rect key="frame" x="16" y="424" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-mJ-6Gz">
+                                <rect key="frame" x="16" y="481" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZz-1p-S9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2000" y="-1945"/>
+        </scene>
+        <!--Photomania-->
         <scene sceneID="4yK-ty-Q5h">
             <objects>
                 <navigationController title="Photomania" automaticallyAdjustsScrollViewInsets="NO" id="hJC-FQ-GRe" sceneMemberID="viewController">
@@ -108,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="-3420" y="-2659"/>
         </scene>
-        <!--PhotographersCDTVC - Photographers-->
+        <!--Photographers-->
         <scene sceneID="Ost-OM-aL1">
             <objects>
                 <tableViewController storyboardIdentifier="PhotographersTableView" title="Photographers" id="sNU-Qa-usU" customClass="PhotographersCDTVC" sceneMemberID="viewController">
@@ -170,7 +230,6 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="http://yuez.me" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2fi-2Z-osc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -192,7 +251,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pJN-bx-ftz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1444" y="-2400"/>
+            <point key="canvasLocation" x="-1429" y="-3065"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="fL1-GN-w73">
@@ -208,11 +267,9 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHU-TJ-m9k">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="jhq-at-rdN">
                                 <rect key="frame" x="142" y="266" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
@@ -245,10 +302,13 @@
             <point key="canvasLocation" x="-2000" y="-2659"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
 </document>

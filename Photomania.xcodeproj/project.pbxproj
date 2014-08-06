@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062926DB19925F7600CBF4DD /* AddPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 062926DA19925F7600CBF4DD /* AddPhotoViewController.m */; };
 		063ED502198A808000495A2D /* PhotosByPhotographerCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 063ED501198A808000495A2D /* PhotosByPhotographerCDTVC.m */; };
 		063ED505198A899F00495A2D /* PhotosCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 063ED504198A899F00495A2D /* PhotosCDTVC.m */; };
 		063ED508198A968100495A2D /* URLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063ED507198A968100495A2D /* URLViewController.m */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		062926D919925F7600CBF4DD /* AddPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
+		062926DA19925F7600CBF4DD /* AddPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
 		063ED500198A808000495A2D /* PhotosByPhotographerCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosByPhotographerCDTVC.h; sourceTree = "<group>"; };
 		063ED501198A808000495A2D /* PhotosByPhotographerCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosByPhotographerCDTVC.m; sourceTree = "<group>"; };
 		063ED503198A899F00495A2D /* PhotosCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCDTVC.h; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 		06E2535819892FA3002A6980 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				062926D919925F7600CBF4DD /* AddPhotoViewController.h */,
+				062926DA19925F7600CBF4DD /* AddPhotoViewController.m */,
 				068548691991109F003F6979 /* PhotosByPhotographerImageViewController.h */,
 				0685486A1991109F003F6979 /* PhotosByPhotographerImageViewController.m */,
 				0672E4E4198FB985006FC0B6 /* PhotosByPhotographerMapViewController.h */,
@@ -381,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				063ED508198A968100495A2D /* URLViewController.m in Sources */,
+				062926DB19925F7600CBF4DD /* AddPhotoViewController.m in Sources */,
 				06A895B91987D16600FADAB0 /* PhotomaniaAppDelegate+MOC.m in Sources */,
 				06A895B61986975F00FADAB0 /* PhotographersCDTVC.m in Sources */,
 				0672E4E6198FB985006FC0B6 /* PhotosByPhotographerMapViewController.m in Sources */,

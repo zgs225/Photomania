@@ -12,6 +12,7 @@
 #import <CoreData/CoreData.h>
 #import "Photo+Flickr.h"
 #import "PhotoDatabaseAvailabilityNotication.h"
+#import "Photographer+Create.h"
 
 @interface PhotomaniaAppDelegate () <NSURLSessionDownloadDelegate>
 
@@ -116,11 +117,16 @@ handleEventsForBackgroundURLSession:(NSString *)identifier
 {
     _photoDatabaseContext = photoDatabaseContext;
     
+    if (photoDatabaseContext) {
+        [Photographer userInManagedObjectContext:photoDatabaseContext];
+    }
+    
     if (self.photoDatabaseContext) {
         self.flickrForegoundFetchTimer = [NSTimer scheduledTimerWithTimeInterval:FOREGROUND_FLICKR_FETCH_INTERVAL
                                                                           target:self
                                                                         selector:@selector(startFlickrFetch:)
-                                                                        userInfo:nil repeats:YES];
+                                                                        userInfo:nil
+                                                                         repeats:YES];
     }
     
     NSDictionary *userInfo = self.photoDatabaseContext ? @{ PhotoDatabaseAvailabilityContext : self.photoDatabaseContext } : nil;
